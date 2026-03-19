@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jan Korsanke — Product Strategy & Design Leadership</title>
+<meta name="description" content="Product strategy and design leadership consulting for product teams at an inflection point. DACH region.">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #F0EFE9;
+    --ink: #111110;
+    --ink-light: #555550;
+    --teal: #7ECAC8;
+    --teal-dark: #4AADAA;
+    --white: #FAFAF8;
+    --rule: #DDDDD6;
+    --label-bg: #E2F4F3;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+  }
+
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 64px 40px;
+  }
+
+  /* ---- NAV ---- */
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 20px;
+    margin-bottom: 64px;
+  }
+
+  .nav-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  .nav-cta {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 1px;
+    transition: opacity 0.15s;
+  }
+
+  .nav-cta:hover { opacity: 0.55; }
+
+  /* ---- SECTION LABEL ---- */
+  .section-label {
+    font-family: 'Syne', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--teal-dark);
+    margin-bottom: 24px;
+  }
+
+  /* ---- POSITIONING SECTION ---- */
+  .positioning {
+    margin-bottom: 80px;
+  }
+
+  .headline {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(36px, 5vw, 54px);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    margin-bottom: 32px;
+    color: var(--ink);
+  }
+
+  .headline em {
+    font-style: normal;
+    color: var(--teal-dark);
+  }
+
+  .sub-headline {
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--ink-light);
+    max-width: 560px;
+    line-height: 1.7;
+    margin-bottom: 40px;
+  }
+
+  /* Pain cards */
+  .pain-section-label {
+    font-family: 'Syne', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--teal-dark);
+    margin-top: 40px;
+    margin-bottom: 24px;
+  }
+
+  .pain-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  .pain-card {
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    padding: 20px;
+    position: relative;
+  }
+
+  .pain-card::before {
+    content: '"';
+    font-family: 'Syne', sans-serif;
+    font-size: 48px;
+    color: var(--teal);
+    line-height: 1;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .pain-card p {
+    font-size: 14px;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.55;
+  }
+
+  .pain-caption {
+    font-size: 14px;
+    color: var(--ink-light);
+    padding: 16px 20px;
+    background: var(--label-bg);
+    border-radius: 8px;
+    border-left: 3px solid var(--teal-dark);
+    margin-bottom: 0;
+  }
+
+  .pain-caption strong {
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  /* ICP block */
+  .icp-block {
+    margin-top: 48px;
+    padding: 32px;
+    background: var(--ink);
+    border-radius: 16px;
+    color: var(--white);
+  }
+
+  .icp-block .section-label {
+    color: var(--teal);
+    margin-bottom: 16px;
+  }
+
+  .icp-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+
+  .icp-desc {
+    font-size: 15px;
+    color: rgba(250,250,248,0.7);
+    line-height: 1.7;
+    max-width: 600px;
+  }
+
+  .icp-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 20px;
+  }
+
+  .icp-tag {
+    background: rgba(126,202,200,0.15);
+    border: 1px solid rgba(126,202,200,0.3);
+    color: var(--teal);
+    font-size: 13px;
+    padding: 5px 14px;
+    border-radius: 100px;
+    font-weight: 500;
+  }
+
+  /* Differentiator */
+  .differentiator {
+    margin-top: 48px;
+    padding: 28px 32px;
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    background: var(--white);
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+  }
+
+  .diff-icon {
+    font-size: 28px;
+    flex-shrink: 0;
+    line-height: 1;
+    margin-top: 3px;
+  }
+
+  .diff-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+
+  .diff-text {
+    font-size: 14px;
+    color: var(--ink-light);
+    line-height: 1.65;
+  }
+
+  /* ---- DIVIDER ---- */
+  .section-divider {
+    border: none;
+    border-top: 1px solid var(--rule);
+    margin: 64px 0;
+  }
+
+  /* ---- OFFER SECTION ---- */
+  .offer-header {
+    margin-bottom: 40px;
+  }
+
+  .offer-headline {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 14px;
+  }
+
+  .offer-sub {
+    font-size: 16px;
+    color: var(--ink-light);
+    max-width: 520px;
+    line-height: 1.7;
+  }
+
+  /* Journey */
+  .journey {
+    position: relative;
+    margin-bottom: 48px;
+  }
+
+  .journey-line {
+    position: absolute;
+    left: 23px;
+    top: 32px;
+    bottom: 32px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--teal), transparent);
+    z-index: 0;
+  }
+
+  .journey-step {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .step-dot {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+  }
+
+  .step-dot.entry {
+    background: var(--teal);
+    color: var(--ink);
+  }
+  .step-dot.core {
+    background: var(--ink);
+    color: var(--white);
+  }
+  .step-dot.ongoing {
+    background: var(--white);
+    border: 2px solid var(--rule);
+    color: var(--ink-light);
+  }
+
+  .step-body {
+    flex: 1;
+    padding: 20px 24px;
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    margin-bottom: 16px;
+  }
+
+  .step-body.highlighted {
+    border-color: var(--teal-dark);
+    background: #f0fafa;
+  }
+
+  .step-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    padding: 3px 10px;
+    border-radius: 100px;
+  }
+
+  .step-tag.entry { background: var(--label-bg); color: var(--teal-dark); }
+  .step-tag.core { background: var(--ink); color: var(--white); }
+  .step-tag.ongoing { background: var(--rule); color: var(--ink-light); }
+
+  .step-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+
+  .step-desc {
+    font-size: 14px;
+    color: var(--ink-light);
+    line-height: 1.65;
+    margin-bottom: 14px;
+  }
+
+  .step-outcome {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink);
+    padding: 10px 14px;
+    background: rgba(126,202,200,0.12);
+    border-radius: 6px;
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+  }
+
+  .step-outcome::before {
+    content: '→';
+    color: var(--teal-dark);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  /* Social proof */
+  .proof-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 48px;
+  }
+
+  .proof-card {
+    padding: 24px;
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+  }
+
+  .proof-quote {
+    font-size: 15px;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.65;
+    margin-bottom: 14px;
+  }
+
+  .proof-source {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--ink-light);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  /* CTA */
+  .cta-block {
+    background: var(--teal);
+    border-radius: 16px;
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .cta-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--ink);
+    margin-bottom: 10px;
+    line-height: 1.2;
+  }
+
+  .cta-desc {
+    font-size: 14px;
+    color: rgba(17,17,16,0.65);
+    line-height: 1.65;
+    max-width: 420px;
+  }
+
+  .cta-scarcity {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    background: rgba(17,17,16,0.1);
+    color: var(--ink);
+    padding: 4px 12px;
+    border-radius: 100px;
+  }
+
+  .cta-btn {
+    display: block;
+    background: var(--ink);
+    color: var(--white);
+    font-family: 'Syne', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    padding: 16px 28px;
+    border-radius: 10px;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: opacity 0.15s;
+  }
+
+  .cta-btn:hover { opacity: 0.8; }
+
+  /* ---- FOOTER ---- */
+  .footer {
+    margin-top: 64px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .footer-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink-light);
+    letter-spacing: 0.04em;
+  }
+
+  .footer-contact {
+    font-size: 13px;
+    color: var(--ink-light);
+  }
+
+  .footer-contact a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .footer-contact a:hover {
+    border-color: var(--ink);
+  }
+
+  @media (max-width: 640px) {
+    .pain-grid { grid-template-columns: 1fr; }
+    .proof-row { grid-template-columns: 1fr; }
+    .cta-block { flex-direction: column; }
+    .page { padding: 40px 20px; }
+    .footer { flex-direction: column; align-items: flex-start; gap: 8px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- NAV -->
+  <nav class="nav">
+    <span class="nav-name">Jan Korsanke</span>
+    <a href="mailto:jan@jankorsanke.com" class="nav-cta">Book a session →</a>
+  </nav>
+
+  <!-- =================== POSITIONING =================== -->
+  <section class="positioning">
+
+    <h1 class="headline">
+      Before you build<br>the wrong thing —<br><em>let's get clear.</em>
+    </h1>
+
+    <p class="sub-headline">
+      Most product teams aren't short on ideas or talent.
+      They're short on a clear, shared direction — and someone who can
+      bridge design thinking with business reality to create one.
+    </p>
+
+    <!-- Pain recognition -->
+    <div class="pain-section-label">The conversations I usually get called into</div>
+
+    <div class="pain-grid">
+      <div class="pain-card">
+        <p>We've been building for a year and still can't agree on what the product actually is.</p>
+      </div>
+      <div class="pain-card">
+        <p>Leadership approved a rebuild. Nobody's sure if it's the right call. We're already behind.</p>
+      </div>
+      <div class="pain-card">
+        <p>Our design and tech teams are misaligned. Every sprint creates more debt, not more progress.</p>
+      </div>
+    </div>
+
+    <div class="pain-caption">
+      If any of these sounds familiar — <strong>this is exactly the situation I work in.</strong> Not after it's been tidied up. Right in the middle of it.
+    </div>
+
+    <!-- ICP -->
+    <div class="icp-block">
+      <div class="section-label">Who I work with</div>
+      <div class="icp-title">Product and design leaders at mid-to-large companies in DACH — typically at an inflection point.</div>
+      <p class="icp-desc">
+        You're a CPO, Head of Product, or Head of Digital at a company between 100 and 1,000 people.
+        You have a capable team. What's missing is external clarity — someone who can see the whole picture,
+        challenge the assumptions everyone inside is too close to challenge, and help you move faster with confidence.
+      </p>
+      <div class="icp-tags">
+        <span class="icp-tag">CPO / Head of Product</span>
+        <span class="icp-tag">Head of Digital</span>
+        <span class="icp-tag">CDO / CTO</span>
+        <span class="icp-tag">100–1,000 employees</span>
+        <span class="icp-tag">DACH region</span>
+        <span class="icp-tag">Pre-launch or transformation</span>
+      </div>
+    </div>
+
+    <!-- Differentiator -->
+    <div class="differentiator">
+      <div class="diff-icon">⚡</div>
+      <div>
+        <div class="diff-title">The thing most design consultants can't say</div>
+        <p class="diff-text">
+          I speak design and I speak business — and critically, I understand how organisations actually make decisions.
+          That means I don't just deliver a strategy deck. I help you navigate the internal dynamics
+          that determine whether a strategy actually gets executed. After 12+ years working across 50Hertz, Allianz, BMW,
+          Mercedes-Benz, and Siemens Healthineers, I've learned that the work is rarely just the work.
+        </p>
+      </div>
+    </div>
+
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- =================== OFFER =================== -->
+  <section class="offer">
+    <div class="offer-header">
+      <div class="section-label">Three ways to work together</div>
+      <h2 class="offer-headline">One clear starting point.</h2>
+      <p class="offer-sub">
+        Most engagements start with a focused diagnostic. From there, we go as deep as the situation calls for.
+      </p>
+    </div>
+
+    <div class="journey">
+      <div class="journey-line"></div>
+
+      <!-- Step 1 -->
+      <div class="journey-step">
+        <div class="step-dot entry">01</div>
+        <div class="step-body highlighted">
+          <span class="step-tag entry">Entry point · 1–2 weeks</span>
+          <div class="step-title">Product Readiness Check</div>
+          <p class="step-desc">
+            A focused diagnostic engagement. We map your current product situation — team alignment,
+            strategic clarity, roadmap health, and execution risks — before you commit budget or begin building.
+            Concrete, actionable, and fast.
+          </p>
+          <div class="step-outcome">You walk away with a clear picture of what to fix, what to build first, and where the hidden risks are. Even if we don't work further together.</div>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="journey-step">
+        <div class="step-dot core">02</div>
+        <div class="step-body">
+          <span class="step-tag core">Core engagement · 4–12 weeks</span>
+          <div class="step-title">Product Strategy & Roadmap Design</div>
+          <p class="step-desc">
+            User research done for you, synthesised into clear product priorities. A co-created strategy
+            and sequenced roadmap — what to build, when, and why — aligned with your business goals and
+            your organisation's actual capacity to execute.
+          </p>
+          <div class="step-outcome">A validated direction your leadership, product, design, and tech teams can all point to. Tangible outputs: research reports, prioritised features, roadmaps, flows.</div>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="journey-step">
+        <div class="step-dot ongoing">03</div>
+        <div class="step-body">
+          <span class="step-tag ongoing">Ongoing · Retainer or embedded</span>
+          <div class="step-title">Design Implementation Leadership</div>
+          <p class="step-desc">
+            Strategy only matters if it survives contact with execution. I support coordination between
+            your product, design, and tech teams — keeping the direction alive as priorities shift, scope
+            changes, and stakeholders evolve.
+          </p>
+          <div class="step-outcome">Fewer pivots born from confusion. More momentum built from shared clarity.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Proof -->
+    <div class="section-label">What changes when we work together</div>
+
+    <div class="proof-row">
+      <div class="proof-card">
+        <p class="proof-quote">"We went from six competing roadmap proposals to one aligned direction in three weeks. For the first time, design and engineering were pulling in the same direction."</p>
+        <div class="proof-source">Product Lead · Enterprise Energy Company</div>
+      </div>
+      <div class="proof-card">
+        <p class="proof-quote">"Jan helped us realise we were about to build the wrong thing — before we spent €300k building it. The diagnostic alone was worth more than the engagement fee."</p>
+        <div class="proof-source">CPO · B2B SaaS · DACH</div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-block">
+      <div class="cta-left">
+        <div class="cta-title">Start with a 45-minute<br>Product Clarity Session.</div>
+        <p class="cta-desc">
+          We'll map your current situation together and identify the one or two things most worth addressing.
+          No pitch. No deck. Just a focused conversation — and you'll leave with something useful regardless of what comes next.
+        </p>
+        <span class="cta-scarcity">Limited to 4 sessions per month</span>
+      </div>
+      <a href="mailto:jan@jankorsanke.com" class="cta-btn">Book a session →</a>
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <span class="footer-name">Jan Korsanke</span>
+    <span class="footer-contact">
+      <a href="mailto:jan@jankorsanke.com">jan@jankorsanke.com</a>
+      &nbsp;·&nbsp;
+      <a href="tel:+491705853954">+49 170 585 3954</a>
+    </span>
+  </footer>
+
+</div>
+</body>
+</html>
